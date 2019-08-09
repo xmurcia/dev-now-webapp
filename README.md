@@ -1,4 +1,4 @@
-# < dev-now /> Find the talent, work in a better place to be
+# < dev-now /> Find the talent, work in a better place to be.
 
 ## Available Scripts
 
