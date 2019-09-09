@@ -16,7 +16,9 @@ const selectUserReducer = (selectedUser: any = null, action: any) => {
   }
 }
 
-export default combineReducers({
+export const rootReducer = combineReducers({
   user: userReducer,
   selectedUser: selectUserReducer
 });
+
+export type Appstate = ReturnType<typeof rootReducer>
