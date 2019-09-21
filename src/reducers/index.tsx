@@ -7,18 +7,30 @@ const userReducer = () => {
   ];
 }
 
-const selectUserReducer = (selectedUser: any = null, action: any) => {
+const selectUserReducer = (state: any = null, action: any) => {
   switch (action.type) {
     case 'SELECT_USER':
-      return action;
+      return action.payload;
     default:
-      return selectedUser;
+      return state;
+  }
+}
+
+const postsReducer = (state: any = [], action: any) => {
+  switch (action.type) {
+    case 'FETCH_POSTS':
+      return [...action.payload, ...state];
+    case 'ADD_POST':
+      return [action.payload, ...state];
+    default:
+      return state;
   }
 }
 
 export const rootReducer = combineReducers({
-  user: userReducer,
-  selectedUser: selectUserReducer
+  users: userReducer,
+  selectedUser: selectUserReducer,
+  posts: postsReducer,
 });
 
 export type Appstate = ReturnType<typeof rootReducer>
