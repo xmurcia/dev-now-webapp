@@ -15,11 +15,19 @@ const divStyle: CSS.Properties = {
 const TestReduxComponent: FunctionComponent<TestReduxComponentProps> = ({ user_name }: TestReduxComponentProps) => {
 
   const users: {}[] = useSelector((state: Appstate) => state.user);
+  const posts: {}[] = useSelector((state: Appstate) => state.posts);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
   return (
     <div style={divStyle}>
       <p>{user_name}</p>
       <button onClick={() => console.log(users)}>Show users</button>
+      <ul>
+          { posts && posts.map((post: any) => <li key={post.id}>{post.title}</li>)}
+      </ul>
     </div>
   );
 }
