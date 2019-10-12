@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux';
 
-const userReducer = () => {
+const userReducer = (): any => {
   return [
     { name: 'pep', surname: 'guardiola', id: 1 },
     { name: 'pedro', surname: 'penelope', id: 2 }
   ];
-}
+};
 
+// tslint:disable-next-line: typedef
 const selectUserReducer = (state: any = null, action: any) => {
   switch (action.type) {
     case 'SELECT_USER':
@@ -14,8 +15,9 @@ const selectUserReducer = (state: any = null, action: any) => {
     default:
       return state;
   }
-}
+};
 
+// tslint:disable-next-line: typedef
 const postsReducer = (state: any = [], action: any) => {
   switch (action.type) {
     case 'FETCH_POSTS':
@@ -25,7 +27,7 @@ const postsReducer = (state: any = [], action: any) => {
     default:
       return state;
   }
-}
+};
 
 export const rootReducer = combineReducers({
   users: userReducer,
@@ -33,4 +35,4 @@ export const rootReducer = combineReducers({
   posts: postsReducer,
 });
 
-export type Appstate = ReturnType<typeof rootReducer>
+export type Appstate = ReturnType<typeof rootReducer>;
