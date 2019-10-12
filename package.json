@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:ts": "tslint 'src/**/*.{ts,tsx,js}'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +40,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.1.0"
   }
 }
