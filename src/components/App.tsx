@@ -1,22 +1,24 @@
-import React from 'react';
-import logo from './logo.png';
-import './App.css';
-import TestReduxComponent from './TestReduxComponent';
+import React, { Fragment, ReactElement } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PublicContainer from '../containers/Public';
+import PrivateContainer from '../containers/Private';
+import NotFoundRedirectComponent from '../components/NotFoundRedirect';
 
-const App: React.FC = () => {
+const App: React.FC = (): ReactElement => {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          &lt;dev-now /&gt;
-        </h1>
-        <h2>Find the talent, work in a better place to be.</h2>
-        <TestReduxComponent user_name='test name'/>
-      </header>
-    </div>
+    <Fragment>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login" component={PublicContainer} />
+          <Route path="/signup" component={PublicContainer} />
+          <Route path="/login" component={PublicContainer} />
+          <Route exact={true} path="/" component={PrivateContainer} />
+          <Route component={NotFoundRedirectComponent} />
+        </Switch>
+      </BrowserRouter>
+    </Fragment>
   );
-}
+};
 
 export default App;
