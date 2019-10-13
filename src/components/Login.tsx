@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-type LoginComponentProps = {
-}
-
-
-const LoginComponent: React.FC = () => {
+const LoginComponent: React.FC = (): ReactElement => {
 
   return (
     <div>
       Login Component!
     </div>
   );
-}
+};
 
 export default LoginComponent;

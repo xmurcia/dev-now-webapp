@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 const userReducer = (): any => {
   return [
     { name: 'pep', surname: 'guardiola', id: 1 },
-    { name: 'pedro', surname: 'penelope', id: 2 }
+    { name: 'pedro', surname: 'penelope', id: 2 },
   ];
 };
 

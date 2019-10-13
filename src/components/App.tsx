@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactElement } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import PublicContainer from '../containers/Public';
 import PrivateContainer from '../containers/Private';
 import NotFoundRedirectComponent from '../components/NotFoundRedirect';
 
-const App: React.FC = () => {
+const App: React.FC = (): ReactElement => {
 
   return (
     <Fragment>
@@ -19,6 +19,6 @@ const App: React.FC = () => {
       </BrowserRouter>
     </Fragment>
   );
-}
+};
 
 export default App;
