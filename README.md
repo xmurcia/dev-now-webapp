@@ -1,5 +1,4 @@
-# < dev-now /> Find the talent, work in a better place to be.
-
+# < dev-now />
 ## Available Scripts
 
 In the project directory, you can run:
